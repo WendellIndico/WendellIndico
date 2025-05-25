@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="tabs">
+            <button id="calculator-tab" class="active-tab" onclick="switchTab('calculator')">Basic Calculator</button>
+            <button id="converter-tab" onclick="switchTab('converter')">Unit Converter</button>
+        </div>
+
+        <!-- Calculator Display -->
+        <div id="calculator-section">
+            <input type="text" id="display" disabled />
+            <div class="buttons">
+                <button onclick="clearDisplay()">AC</button>
+                <button onclick="append('%')">%</button>
+                <button onclick="append('/')">÷</button>
+                <button onclick="backspace()">←</button>
+
+                <button onclick="append('7')">7</button>
+                <button onclick="append('8')">8</button>
+                <button onclick="append('9')">9</button>
+                <button onclick="append('*')">×</button>
+
+                <button onclick="append('4')">4</button>
+                <button onclick="append('5')">5</button>
+                <button onclick="append('6')">6</button>
+                <button onclick="append('-')">−</button>
+
+                <button onclick="append('1')">1</button>
+                <button onclick="append('2')">2</button>
+                <button onclick="append('3')">3</button>
+                <button onclick="append('+')">+</button>
+
+                <button onclick="append('0')" class="zero">0</button>
+                <button onclick="append('.')">.</button>
+                <button onclick="calculate()" class="equals">=</button>
+            </div>
+        </div>
+
+        <!-- Unit Converter -->
+        <div id="converter-section" style="display: none;">
+            <input type="number" id="inputValue" placeholder="Enter value">
+            <select id="unitType">
+                <option value="cmToInch">Centimeters to Inches</option>
+                <option value="kgToLb">Kilograms to Pounds</option>
+                <option value="cToF">Celsius to Fahrenheit</option>
+            </select>
+            <button onclick="convertUnit()">Convert</button>
+            <p id="conversionResult"></p>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
